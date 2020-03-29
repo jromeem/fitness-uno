@@ -5,19 +5,20 @@ import { useGesture } from 'react-use-gesture'
 import './Deck.css'
 
 const cards = [
-  'https://upload.wikimedia.org/wikipedia/en/f/f5/RWS_Tarot_08_Strength.jpg',
-  'https://upload.wikimedia.org/wikipedia/en/5/53/RWS_Tarot_16_Tower.jpg',
-  'https://upload.wikimedia.org/wikipedia/en/9/9b/RWS_Tarot_07_Chariot.jpg',
-  'https://upload.wikimedia.org/wikipedia/en/d/db/RWS_Tarot_06_Lovers.jpg',
-  'https://upload.wikimedia.org/wikipedia/en/thumb/8/88/RWS_Tarot_02_High_Priestess.jpg/690px-RWS_Tarot_02_High_Priestess.jpg',
-  'https://upload.wikimedia.org/wikipedia/en/d/de/RWS_Tarot_01_Magician.jpg'
+  'http://unocardinfo.victorhomedia.com/graphics/uno_card-wildchange.png',
+  'http://unocardinfo.victorhomedia.com/graphics/uno_card-redreverse.png',
+  'http://unocardinfo.victorhomedia.com/graphics/uno_card-yellowskip.png',
+  'http://unocardinfo.victorhomedia.com/graphics/uno_card-wilddraw4.png',
+  'http://unocardinfo.victorhomedia.com/graphics/uno_card-blue5.png',
+  'http://unocardinfo.victorhomedia.com/graphics/uno_card-back.png',
+
 ]
 
 // These two are just helpers, they curate spring data, values that are later being interpolated into css
 const to = (i: any) => ({ x: 0, y: i * -4, scale: 1, rot: -10 + Math.random() * 20, delay: i * 100 })
 const from = (i: any) => ({ x: 0, rot: 0, scale: 1.5, y: -1000 })
 // This is being used down there in the view, it interpolates rotation and scale into a css transform
-const trans = (r: any, s: any) => `perspective(1500px) rotateX(30deg) rotateY(${r / 10}deg) rotateZ(${r}deg) scale(${s})`
+const trans = (r: any, s: any) => `perspective(2100px) rotateX(30deg) rotateY(${r / 10}deg) rotateZ(${r}deg) scale(${s})`
 
 export const Deck: React.FC = () => {
   const [gone] = useState(() => new Set()) // The set flags all the cards that are flicked out
@@ -35,7 +36,7 @@ export const Deck: React.FC = () => {
       const scale = down ? 1.1 : 1 // Active cards lift up a bit
       return { x, rot, scale, delay: undefined, config: { friction: 50, tension: down ? 800 : isGone ? 200 : 500 } } as any
     })
-    if (!down && gone.size === cards.length) setTimeout(() => gone.clear() === undefined || set(i => to(i)), 600)
+    if (!down && gone.size === cards.length) setTimeout(() => gone.clear() !== undefined || set(i => to(i)), 600)
   })
   // Now we're just mapping the animated values to our view, that's it. Btw, this component only renders once. :-)
   const mapped = props.map(({ x, y, rot, scale }, i) => (
