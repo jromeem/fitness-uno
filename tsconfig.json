@@ -1,6 +1,8 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "es6",
+    "rootDir": ".",
+    "outDir": "_dist",
     "lib": [
       "dom",
       "dom.iterable",
@@ -12,18 +14,15 @@
     "allowSyntheticDefaultImports": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
-    "module": "esnext",
+    "module": "commonjs",
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": true,
+    "noEmit": false,
     "jsx": "react"
   },
-  "include": [
-    "frontend/**/*",
-    "backend/**/*",
-  ],
   "exclude": [
+    "_dist",
     "node_modules",
   ]
 }

@@ -1,1 +1,2 @@
-const backend = require('./backend');
+import backend from './backend';
+backend;

@@ -2,14 +2,18 @@
   "name": "fitness-uno",
   "version": "1.0.0",
   "description": "fitness uno",
-  "main": "index.js",
+  "main": "_dist/index.js",
   "scripts": {
-    "frontend-server": "cd frontend && react-scripts start",
-    "backend-server": "node index.ts",
-    "test-backend": "cd backend && node test.ts",
-    "test-frontend": "cd frontend && react-scripts test",
-    "eject-frontend": "cd frontend && react-scripts eject",
-    "build": "cd frontend && react-scripts build"
+    "clean": "rimraf _dist/*",
+    "copy-assets": "node _dist/tools/copyAssets",
+    "dev:start": "npm-run-all build start",
+    "dev": "nodemon --watch frontend/src --watch backend --watch tools -e css,ts,tsx,jsx,js,json --exec npm run dev:start",
+    "start": "node .",
+    "tsc": "tsc -p ./tsconfig.json",
+    "frontend-build": "cd frontend && react-scripts build",
+    "frontend-start": "cd frontend && react-scripts build",
+    "build": "npm-run-all clean tsc frontend-build && npm run copy-assets",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -43,8 +47,16 @@
     "typescript": "^3.7.5"
   },
   "devDependencies": {
+    "@types/fs-extra": "^8.1.0",
+    "@types/shelljs": "^0.8.7",
+    "fs-extra": "^9.0.0",
+    "nodemon": "^2.0.2",
+    "npm-run-all": "^4.1.5",
     "request": "^2.81.0",
-    "tape": "^4.7.0"
+    "rimraf": "^3.0.2",
+    "shelljs": "^0.8.3",
+    "tape": "^4.7.0",
+    "ts-node": "^8.8.1"
   },
   "keywords": [
     "node",
