@@ -8,8 +8,8 @@
     "backend-server": "node index.js",
     "test-backend": "cd backend && node test.js",
     "test-frontend": "cd frontend && react-scripts test",
-    "build-frontend": "cd frontend && react-scripts build",
-    "eject-frontend": "cd frontend && react-scripts eject"
+    "eject-frontend": "cd frontend && react-scripts eject",
+    "build": "cd frontend && react-scripts build"
   },
   "repository": {
     "type": "git",
