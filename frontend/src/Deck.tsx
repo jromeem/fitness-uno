@@ -5,6 +5,7 @@ import { useGesture } from 'react-use-gesture'
 import './Deck.css'
 
 const cards = [
+  'https://i.imgur.com/enNKR7f.png',
   'http://unocardinfo.victorhomedia.com/graphics/uno_card-wildchange.png',
   'http://unocardinfo.victorhomedia.com/graphics/uno_card-redreverse.png',
   'http://unocardinfo.victorhomedia.com/graphics/uno_card-yellowskip.png',
@@ -18,7 +19,7 @@ const cards = [
 const to = (i: any) => ({ x: 0, y: i * -4, scale: 1, rot: -10 + Math.random() * 20, delay: i * 100 })
 const from = (i: any) => ({ x: 0, rot: 0, scale: 1.5, y: -1000 })
 // This is being used down there in the view, it interpolates rotation and scale into a css transform
-const trans = (r: any, s: any) => `perspective(2100px) rotateX(30deg) rotateY(${r / 10}deg) rotateZ(${r}deg) scale(${s})`
+const trans = (r: any, s: any) => `perspective(1200px) rotateX(30deg) rotateY(${r / 10}deg) rotateZ(${r}deg) scale(${s})`
 
 export const Deck: React.FC = () => {
   const [gone] = useState(() => new Set()) // The set flags all the cards that are flicked out
