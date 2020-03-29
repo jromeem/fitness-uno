@@ -1,0 +1,19 @@
+{
+  "name": "fitness-uno",
+  "version": "1.0.0",
+  "description": "fitness uno",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jromeem/fitness-uno.git"
+  },
+  "author": "jerome and russel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jromeem/fitness-uno/issues"
+  },
+  "homepage": "https://github.com/jromeem/fitness-uno#readme"
+}
