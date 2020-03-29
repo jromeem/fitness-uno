@@ -20,6 +20,10 @@
     "jsx": "react"
   },
   "include": [
-    "src"
+    "frontend/**/*",
+    "backend/**/*",
+  ],
+  "exclude": [
+    "node_modules",
   ]
 }

@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "frontend-server": "cd frontend && react-scripts start",
-    "backend-server": "node index.js",
-    "test-backend": "cd backend && node test.js",
+    "backend-server": "node index.ts",
+    "test-backend": "cd backend && node test.ts",
     "test-frontend": "cd frontend && react-scripts test",
     "eject-frontend": "cd frontend && react-scripts eject",
     "build": "cd frontend && react-scripts build"
