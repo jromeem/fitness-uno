@@ -11,7 +11,7 @@
     "start": "node .",
     "tsc": "tsc -p ./tsconfig.json",
     "frontend-build": "cd frontend && react-scripts build",
-    "frontend-start": "cd frontend && react-scripts build",
+    "frontend-start": "cd frontend && react-scripts start",
     "build": "npm-run-all clean tsc frontend-build && npm run copy-assets",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -41,9 +41,12 @@
     "@types/tape": "^4.2.34",
     "ejs": "^2.5.6",
     "express": "^4.15.2",
+    "lodash-es": "4.17.14",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1",
+    "react-spring": "^9.0.0-beta.34",
+    "react-use-gesture": "5.0.0",
     "typescript": "^3.7.5"
   },
   "devDependencies": {
