@@ -1,10 +1,10 @@
-const { spawn } = require('child_process');
-const request = require('request');
-const test = require('tape');
+import { spawn } from 'child_process';
+import request from 'request';
+import test from 'tape';
 
 // Start the app
-const env = Object.assign({}, process.env, {PORT: 5000});
-const child = spawn('node', ['index.js'], {env});
+const env = Object.assign({}, process.env, { PORT: 5000 });
+const child = spawn('node', ['index.js'], { env });
 
 test('responds to requests', (t) => {
   t.plan(4);
